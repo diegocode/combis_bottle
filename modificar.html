@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Reseva de asiento</title>
+<link type="text/css" href="css/style.css" rel="stylesheet">
+<link type="text/css" href="css/formulario.css" rel="stylesheet">
+<link type="text/css" href="css/menu.css" rel="stylesheet">
+</head>
+<body>
+	<ul id="menu">
+		<li><a href="/">home</a></li>
+		<li><a href="lista">listado</a></li>
+		<li class="active" ><a href="reserva">reservar</a><br></li>
+		<li><a href="buscar.html">buscar</a><br></li>
+		<li><a href="ayuda.html">ayuda</a><br></li>
+	</ul>
+	
+	<h1>Reseva de asiento</h1>	
+	<form  method="post" action="editar_post">		
+		<input type="hidden" name="id" value="{{datorig[0]}}">
+		<label for="in_nombre">nombre </label>
+		<input id="in_nombre" name="nombre"  type="text" maxlength="255" value="{{datorig[1]}}"/> 
+		<br>
+		<label for="in_tel">teléfono </label>
+		<input id="in_tel" name="tele"  type="text" maxlength="255" value="{{datorig[2]}}"/> 
+		<br>
+		<label for="in_orig">sube en... </label>
+		<br>
+		<select id="in_orig" name="sube">
+			% s = ""
+			% for lug in lista_lugares:
+			%     if datorig[3] == lug[1]:
+			%         s = " selected"
+			%     else:
+			%         s = ""        
+			%     end
+			<option {{s}}>{{lug[1]}}</option>
+			% end	
+		</select>
+		<label for="in_dest">baja en... </label>
+		<select id="in_dest" name="baja">
+			% s = ""
+			% for lug in lista_lugares:
+			%     if datorig[4] == lug[1]:
+			%         s = " selected"
+			%     else:
+			%         s = ""        
+			%     end
+			<option {{s}}>{{lug[1]}}</option>
+			% end	
+		</select>
+		<br>
+		<label for="in_asie">asiento </label>
+		<input id="in_asie" name="asiento"  type="text" maxlength="255" value="{{datorig[5]}}"/> 
+		<br>
+		<label for="in_pago">pagado </label>
+		<input id="in_pago" name="pagado"  type="text" maxlength="255" value="{{datorig[6]}}"/> 
+		<br>   
+		<input type="submit" name="submit" value="reservar" />
+	</form>	
+</body>
+</html>

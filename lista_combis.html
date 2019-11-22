@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lista</title>
+	<link type="text/css" href="css/style.css" rel="stylesheet">
+	<link type="text/css" href="css/tablas.css" rel="stylesheet">
+	<link type="text/css" href="css/menu.css" rel="stylesheet">
+
+	<script>
+		function confirmaBorrado(id, nombre, tel) {
+			var s = 'Confirma borrar:\n';
+			s += ' ' + nombre + '\n';
+			s += ' ' + tel + '\n';
+
+			if (confirm(s)) {
+				window.location.href = "borrar?id=" + id;
+			} 
+		}
+	</script>	
+</head> 
+
+<body>	
+	<ul id="menu">
+		<li><a href="/">home</a></li>
+		<li class="active" ><a href="lista">listado</a></li>
+		<li><a href="reserva">reservar</a><br></li>
+		<li><a href="buscar.html">buscar</a><br></li>
+		<li><a href="ayuda.html">ayuda</a><br></li>
+	</ul>
+
+	<h1>Listado de Pasajeros</h1>		
+
+	<table>
+	<tr>
+		<th>nombre</th>
+		<th>tel&eacute;fono</th>
+		<th>sube en</th>
+		<th>baja en</th>
+		<th>asiento</th>
+		<th>pag&oacute;</th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	% for r in listado:            
+	<tr>
+		<td>{{r[1]}}</td>
+		<td>{{r[2]}}</td>
+		<td>{{r[3]}}</td>
+		<td>{{r[4]}}</td>
+		<td>{{r[5]}}</td>
+		<td>{{r[6]}}</td>
+		<td width="25"><a href="#" onclick="confirmaBorrado({{r[0]}}, '{{r[1]}}', '{{r[2]}}');"><img src="img/borrar.gif" width="20" height="20"></a></td>
+		<td width="25"><a href="editar?id={{r[0]}}"><img src="img/editar.gif" width="20" height="20"></a></td>
+
+		%# borrar?id={{r[0]}}
+	</tr>
+	% end
+
+	</table>            
+
+	<br>
+	<br>
+
+	<p><a href="/lista_pdf">
+		<img class="img_pdf" src="img/pdf-file.gif">exporta a PDF
+		</a></p>
+</body>
+</html>

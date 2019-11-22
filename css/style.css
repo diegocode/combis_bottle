@@ -1,0 +1,30 @@
+body, html {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;	
+}
+
+a {
+  color: #112d4e;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:hover:not(.active) {
+  color: #3f72af;
+}
+
+.img_pdf {
+	vertical-align: text-bottom;
+	margin-left: 5px;
+}
+
+h1 {
+	color: #112d4e;
+	margin-left: 10px;
+}
+
+p, table, form, img {
+	margin-left: 10px;
+	margin-right: 10px;
+}

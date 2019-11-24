@@ -2,9 +2,7 @@
 
 Sencillo ejemplo utilizando:
  
- * bottlepy, 
- * pyfpdf, 
- * sqlite
+ * bottlepy + pyfpdf + sqlite
 
 - Permite agregar, eliminar o modificar reservas para una (única!) combi / bus. 
 - Genera un listado en pantalla y en PDF (utilizando PyFPDF)

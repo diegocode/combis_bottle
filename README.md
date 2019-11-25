@@ -6,7 +6,10 @@ Sencillo ejemplo utilizando:
 
 - Permite agregar, eliminar o modificar reservas para una (única!) combi / bus. 
 - Genera un listado en pantalla y en PDF (utilizando PyFPDF)
-- Permite buscar reservas por el número de teléfono 
+- Permite buscar reservas por el número de teléfono (o un fragmento de este)
+
+* ejecutar con: python3 combis_gui.py 
+
 
 Utiliza solo dos tablas:
 

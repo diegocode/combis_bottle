@@ -31,3 +31,10 @@ bottle.py puede estar en la carpeta de combis_gui.py
 
 * bottle: https://bottlepy.org
 * PyFPDF: https://pyfpdf.readthedocs.io
+
+
+
+* iconos de https://www.iconsdb.com/ 
+* .gitignore generado con https://www.gitignore.io/
+* texto de ayuda.html y foto de combi en index.html de https://es.wikipedia.org/wiki/Volkswagen_Transporter
+

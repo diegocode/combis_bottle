@@ -10,7 +10,7 @@ Sencillo ejemplo utilizando:
 
 Utiliza solo dos tablas:
 
-- Combis:
+- Reservas:
 
  id, nombre, teléfono, subeEn (origen), bajaEn (destino), nroAsiento, pago
 
@@ -20,3 +20,14 @@ y
 
  id, nombre, codpost
 
+
+Instalar PyFPDF con
+
+- sudo pip3 install fpdf
+
+bottle.py puede estar en la carpeta de combis_gui.py
+(descargar y copiar; en linux:  wget http://bottlepy.org/bottle.py )
+
+
+* bottle: https://bottlepy.org
+* PyFPDF: https://pyfpdf.readthedocs.io

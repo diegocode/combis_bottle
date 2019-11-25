@@ -42,6 +42,12 @@
 		<th></th>
 	</tr>
 
+	% # listado es una lista de tuplas, cada una con una fila de la tabla "reservas"
+	% # r[0] es el id
+	% # r[1] es el nombre 
+	% # r[2] es el teléfono
+	% # r[3] es el origen, r[4] es el destino, r[5] es el asiento y r[6] el monto abonado
+
 	% for r in listado:            
 	<tr>
 		<td>{{r[1]}}</td>
@@ -50,12 +56,19 @@
 		<td>{{r[4]}}</td>
 		<td>{{r[5]}}</td>
 		<td>{{r[6]}}</td>
-		<td width="25"><a href="#" onclick="confirmaBorrado({{r[0]}}, '{{r[1]}}', '{{r[2]}}');"><img src="img/borrar.gif" width="20" height="20"></a></td>
-		<td width="25"><a href="editar?id={{r[0]}}"><img src="img/editar.gif" width="20" height="20"></a></td>
-
-		%# borrar?id={{r[0]}}
+		<td width="25">
+			% # confirmaBorrado(id, nombre, telefono)  
+			<a href="#" onclick="confirmaBorrado({{r[0]}}, '{{r[1]}}', '{{r[2]}}');">
+				<img src="img/borrar.gif" width="20" height="20">
+			</a>
+		</td>
+		<td width="25">
+			<a href="editar?id={{r[0]}}">
+				<img src="img/editar.gif" width="20" height="20">
+			</a>
+		</td>
 	</tr>
-	% end
+	% end   # fin:  for r in listado:
 
 	</table>            
 
@@ -64,6 +77,7 @@
 
 	<p><a href="/lista_pdf">
 		<img class="img_pdf" src="img/pdf-file.gif">exporta a PDF
-		</a></p>
+	   </a>
+	</p>
 </body>
 </html>

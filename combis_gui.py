@@ -28,7 +28,8 @@ def lista_pdf():
     # obtiene la lista de reservas
     listita = combis.listar()
     
-    return template('lista_combis.html', listado = listita)
+    return template("ver_lista.html", arch="lista_pasajeros.pdf")
+    # return template('lista_combis.html', listado = listita)
 
 
 @route('/lista')

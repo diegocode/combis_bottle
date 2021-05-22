@@ -1,0 +1,13 @@
+
+<ul id="menu">
+	% setdefault('act_item', 0)
+	% actives = ['' for _ in range(5)]  
+    % actives[act_item] = 'class="active"'
+
+	<li {{!actives[0]}}><a href="/">home</a></li>
+	<li {{!actives[1]}}><a href="lista">listado</a></li>
+	<li {{!actives[2]}}><a href="reserva">reservar</a><br></li>
+	<li {{!actives[3]}}><a href="buscar">buscar</a><br></li>
+	<li {{!actives[4]}}><a href="ayuda">ayuda</a><br></li>
+</ul>
+

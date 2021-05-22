@@ -16,7 +16,7 @@ def server_static(filepath):
 @route('/')
 def menu():
     """ index """
-    return template("index.html")
+    return template("templates/index.html")
 
 
 @route('/lista_pdf')
@@ -28,7 +28,7 @@ def lista_pdf():
     # obtiene la lista de reservas
     listita = combis.listar()
     
-    return template("ver_lista.html", arch="lista_pasajeros.pdf")
+    return template("templates/ver_lista.html", arch="lista_pasajeros.pdf")
     # return template('lista_combis.html', listado = listita)
 
 
@@ -39,7 +39,7 @@ def listado():
     # obtiene la lista de reservas
     listita = combis.listar()   
     
-    return template('lista_combis.html', listado = listita)
+    return template('templates/lista_combis.html', listado = listita)
 
 
 @route('/reserva')        
@@ -63,7 +63,7 @@ def editar():
                                 # (en lugar de 10 se puede usar cualquier número mayor a
                                 # la cantidad de columnas de la tabla reservas*)
         
-    return template('modificar.html', datorig = datos[0], lista_lugares=combis.dar_lugares())   
+    return template('templates/modificar.html', datorig = datos[0], lista_lugares=combis.dar_lugares())   
   
 
 @route('/editar_post', method='post')
@@ -90,7 +90,7 @@ def editar_post():
     # obtiene la lista de reservas
     listita = combis.listar()    
    
-    return template('lista_combis.html', listado = listita)        
+    return template('templates/lista_combis.html', listado = listita)        
 
 
 @route('/borrar', method='get')
@@ -106,7 +106,11 @@ def borrar_reserva():
     # obtiene la lista de reservas
     listita = combis.listar()    
    
-    return template('lista_combis.html', listado = listita)    
+    return template('templates/lista_combis.html', listado = listita)    
+
+@route('/buscar')
+def buscar():
+    return template('templates/buscar.html')
 
 
 @route('/buscar_resultado', method='get')
@@ -119,7 +123,12 @@ def consulta_combis():
     # obtiene lista de reservas con el teléfono indicado...     
     listita = combis.listar(" telefono like '%{}%'".format(abuscar))    
         
-    return template('lista_combis.html', listado = listita)
+    return template('templates/lista_combis.html', listado = listita)
+
+
+@route('/ayuda')
+def ayuda():
+    return template('templates/ayuda.html')
 
 
 if __name__ == '__main__':    

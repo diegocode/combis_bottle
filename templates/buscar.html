@@ -7,14 +7,7 @@
 	<link type="text/css" href="css/menu.css" rel="stylesheet">
 </head>   
 <body>
-	<ul id="menu">
-		<li><a href="/">home</a></li>
-		<li><a href="lista">listado</a></li>
-		<li><a href="reserva">reservar</a><br></li>
-		<li class="active"><a href="buscar.html">buscar</a><br></li>
-		<li><a href="ayuda.html">ayuda</a><br></li>
-	</ul>	
-	
+% include("templates/header.html", act_item=3)	
 	<h1>Busca pasajeros</h1>
 	
 	<form method="get" action="buscar_resultado">
